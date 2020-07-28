@@ -3,9 +3,15 @@
  *
  * This test shows how the order of the tests in a context
  * matters. The test of the belief 'is_true' is done very
- * quickly, on the other hand, the test of a .sort() can be
- * very slow due to the computation complexity of this action.
- * So, as we can see, g2 is faster than g1 because
+ * quickly, on the other hand, the test of a .sort() of a few
+ * thousand of numeric elements can be slow due to the
+ * computation complexity of a sorting process.
+ * Notice that the belief 'is_true' is actually not defined,
+ * i.e., in both contexts 'is_true' is evaluated as false which
+ * turn the first plans g1 and g2 not relevant. In this sense,
+ * the performed plans were the empty plans.
+ *
+ * So, as we can see, g2 is faster than g1.
  *
  * A sample output:
  * [test_order_of_tests_in_context] check_performance on event 'test_order_of_tests_in_context' starting at line 16: 8117 microseconds
